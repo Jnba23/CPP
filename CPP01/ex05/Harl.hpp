@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 18:27:56 by asayad            #+#    #+#             */
-/*   Updated: 2025/02/13 11:02:38 by asayad           ###   ########.fr       */
+/*   Created: 2025/02/14 09:45:58 by asayad            #+#    #+#             */
+/*   Updated: 2025/02/14 11:23:58 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HARL_HPP
+#define HARL_HPP
+
+#include <string>
 #include <iostream>
 
-int	main(int ac, char **av)
-{
-	if (ac != 1)
-	{
-		for(int i = 1; i < ac; i++)
-		{
-			std::string s = av[i];
-			for(size_t j = 0; j < s.size(); j++)
-				std::cout << (char)toupper(av[i][j]);
-		}
-		std::cout << std::endl;
-	}
-	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-}
+class Harl {
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public:
+		typedef struct level_s{
+			std::string level;
+			void		(Harl::*f)();
+		} level_t;
+		void complain(std::string level);
+		void level_init(level_t *levels);
+};
+
+
+#endif

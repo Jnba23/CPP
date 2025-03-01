@@ -1,49 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   test.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 18:07:14 by asayad            #+#    #+#             */
-/*   Updated: 2025/02/10 20:30:11 by asayad           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
-#include <string>
+#include <cstdint>
+#include <bitset>
 
-class human {
-   private:
-         std::string n;
-         std::string ln;
-         std::string g;
-   public:
-      void  id();
-   human(std::string name, std::string l_n, std::string gen)
-   {
-      std::cout << "constructor called !" << std::endl;
-      n = name;
-      ln = l_n;
-      g = gen;
+
+// template <size_t dp>
+// constexpr int32_t doubletofixed(double d){
+//    return (int32_t(d * double(1 << dp) + (d >=  0 ? 0.5 :  -0.5)));
+// } 
+
+   int main(){
+      int i = (1 << 24  )- 1;
+      float y = i;
+      std::cout << "i = " << i << std::endl;
+      for (int j = 0; j < 1000000; j++){
+         y += 1.0;
+         i += 1;
+         std::bitset<32> bin_y(y);
+         std::bitset<32> bin_i(i);
+         std::string s = bin_i.to_string();
+         std::string d = bin_y   .to_string();
+         // std::cout << "i = " << i << " float y = " << y << '\n';
+         printf("i = %s, y = %s\n", s.c_str(), d.c_str());
+      }
+      return (0);
    }
-   human(human& x)
-   {
-      std::cout << "copy constructor called !" << std::endl;
-      n = x.n;
-      ln = x.ln;
-      g = x.g;
-   }
-} ;
-
-void human::id()
-{
-   std::cout << n << ln << g << std::endl;
-}
-
-int main()
-{
-   human x("Allo", "ALLo", "walo");
-   human p(x);
-   p.id();
-}

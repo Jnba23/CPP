@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 18:27:56 by asayad            #+#    #+#             */
-/*   Updated: 2025/02/13 11:02:38 by asayad           ###   ########.fr       */
+/*   Created: 2025/02/14 09:56:38 by asayad            #+#    #+#             */
+/*   Updated: 2025/02/14 11:51:40 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Harl.hpp"
 
-int	main(int ac, char **av)
-{
-	if (ac != 1)
-	{
-		for(int i = 1; i < ac; i++)
-		{
-			std::string s = av[i];
-			for(size_t j = 0; j < s.size(); j++)
-				std::cout << (char)toupper(av[i][j]);
-		}
-		std::cout << std::endl;
+int main(int ac, char **av){
+	
+	if (ac == 2){
+		Harl a;
+		std::string s(av[1]);
+		a.complain(s);
 	}
 	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		std::cerr << "Too many or few args !" << '\n';
+	return (0);
 }
