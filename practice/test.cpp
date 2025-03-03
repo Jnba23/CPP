@@ -1,26 +1,55 @@
 #include <iostream>
-#include <cstdint>
-#include <bitset>
+// #include <cstdint>
+// #include <bitset>
 
 
-// template <size_t dp>
-// constexpr int32_t doubletofixed(double d){
-//    return (int32_t(d * double(1 << dp) + (d >=  0 ? 0.5 :  -0.5)));
-// } 
-
-   int main(){
-      int i = (1 << 24  )- 1;
-      float y = i;
-      std::cout << "i = " << i << std::endl;
-      for (int j = 0; j < 1000000; j++){
-         y += 1.0;
-         i += 1;
-         std::bitset<32> bin_y(y);
-         std::bitset<32> bin_i(i);
-         std::string s = bin_i.to_string();
-         std::string d = bin_y   .to_string();
-         // std::cout << "i = " << i << " float y = " << y << '\n';
-         printf("i = %s, y = %s\n", s.c_str(), d.c_str());
+class Cent {
+   private:
+      int cents;
+   public:
+      Cent(int a){
+         cents = a;
+         std::cout << "constructor called !" << "\n";
       }
-      return (0);
-   }
+      Cent(const Cent& a){
+         std::cout << "copy constructor called !" << "\n";
+         cents = a.getcents();
+      }
+      ~Cent(){
+         std::cout << "Destructor called !" << "\n";
+      }
+      Cent& operator=(const Cent& a1);
+      friend Cent operator+(const Cent& a1, const Cent& a2);
+      int   getcents() const;
+      void   setcents(int i);
+};
+
+Cent& Cent::operator=(const Cent& a1){
+   cents = a1.cents;
+   return (*this);
+}
+
+Cent operator+(const Cent& a1, const Cent& a2){
+   Cent b(0);
+   b.cents = a1.getcents() + a2.getcents();
+   return (b);
+};
+
+int   Cent::getcents() const{
+   return (this->cents);
+}
+
+void Cent::setcents(int i){
+   this->cents = i;
+}
+
+int main(){
+   Cent a(60);
+   Cent b(75);
+   Cent c(a + b);
+   std::cout << "1 - Total cents : " << c.getcents() << "\n";
+   a.setcents(20);
+   b.setcents(30);
+   c = a + b;
+   std::cout << "2 - Total cents : " << c.getcents() << "\n";
+}

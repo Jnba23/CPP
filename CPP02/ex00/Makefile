@@ -1,10 +1,10 @@
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -I. -std=c++98
 
-SRCM = main.cpp Harl.cpp
+SRCM = main.cpp Fixed.cpp
 OBJM = $(SRCM:.cpp=.o)
-HEADER = Harl.hpp
-EXEC = Harl
+HEADER = Fixed.hpp
+EXEC = Fixed
 
 all : $(EXEC)
 
