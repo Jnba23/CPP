@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:15:50 by asayad            #+#    #+#             */
-/*   Updated: 2025/02/11 12:20:06 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/03 23:03:31 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ class Zombie {
 	private:
 		std::string name;
 	public:
-		~Zombie(){
-			std::cout << "destructor called on Zombie : " << name << std::endl;
-		}
+		~Zombie();
 		void announce (void);
 		static Zombie* newZombie( std::string name );
 		void randomChump( std::string name );

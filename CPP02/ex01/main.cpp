@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 11:22:57 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/03 23:06:48 by asayad           ###   ########.fr       */
+/*   Created: 2025/03/03 23:20:41 by asayad            #+#    #+#             */
+/*   Updated: 2025/03/03 23:21:06 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-void Zombie::announce (void)
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zomnie::~Zombie(){
-	std::cout << "destructor called on Zombie : " << name << std::endl;
-}
+#include <Fixed.hpp>
 

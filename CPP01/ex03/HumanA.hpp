@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   humana.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:40:49 by asayad            #+#    #+#             */
-/*   Updated: 2025/02/12 23:51:02 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/03 23:09:26 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ class HumanA {
 		std::string name;
 		Weapon		*weapon;
 	public:
-		HumanA(std::string n, Weapon& w){
-			this->name = n;
-			this->weapon = &w;
-		}
+		HumanA(std::string n, Weapon& w);
 		void	attack(void) const;
 };
 
