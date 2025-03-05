@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:22:36 by asayad            #+#    #+#             */
-/*   Updated: 2025/02/08 01:19:28 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/05 22:31:07 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ int Contact::check_input(void)
 	if (first_name.empty() || last_name.empty() || nick_name.empty() 
 		|| phone_number.empty() || darkest_secret.empty())
 		return (0);
+	if (!has_only_printable_char())
+		return (0);
 	for (u_int i = 0; i < phone_number.length(); i++)
 	{
 		if (!std::isdigit(phone_number[i]))
@@ -95,6 +97,30 @@ int Contact::check_input(void)
 			std::cout << BOLD << BLUE << "It's a phone number, C'mooooon !" << RESET << std::endl;
 			return (0) ;
 		}
+	}
+	return (1);
+}
+
+int	Contact::has_only_printable_char(void){
+	for(u_int i = 0; i < first_name.length(); i++){
+		if (!isprint(first_name[i]))
+			return (0);
+	}
+	for(u_int i = 0; i < last_name.length(); i++){
+		if (!isprint(last_name[i]))
+			return (0);
+	}
+	for(u_int i = 0; i < nick_name.length(); i++){
+		if (!isprint(nick_name[i]))
+			return (0);
+	}
+	for(u_int i = 0; i < darkest_secret.length(); i++){
+		if (!isprint(darkest_secret[i]))
+			return (0);
+	}
+	for(u_int i = 0; i < phone_number.length(); i++){
+		if (!isprint(phone_number[i]))
+			return (0);
 	}
 	return (1);
 }

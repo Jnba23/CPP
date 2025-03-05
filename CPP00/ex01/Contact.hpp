@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:42:37 by asayad            #+#    #+#             */
-/*   Updated: 2025/02/08 01:12:36 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/05 22:21:43 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
 	int		set_contact_inf(void);
 	std::string check_lenght(std::string s) const;
 	int		check_input(void);
+	int		has_only_printable_char(void);
 	static std::string trim(std::string s);
 };
 

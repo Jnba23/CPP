@@ -4,11 +4,11 @@ SRCS = PhoneBook.cpp PhoneBook_funcs.cpp Contact_funcs.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-exec = megaphone
+exec = PhoneBook
 
 HEADER = PhoneBook.hpp Contact.hpp
 
-all : megaphone
+all : $(exec)
 
 $(exec) : $(OBJS)
 	c++ $^ -o $@
