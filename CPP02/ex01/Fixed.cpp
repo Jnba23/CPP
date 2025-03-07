@@ -6,11 +6,13 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 21:06:56 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/03 23:25:13 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/07 08:50:48 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
+
+const int Fixed::nb_fraction_bits = 8;
 
 Fixed::Fixed(){
 	std::cout << "Default constructor called" << '\n';
@@ -18,13 +20,13 @@ Fixed::Fixed(){
 }
 
 Fixed::Fixed(const int a){
-	std::cout << "Float constructor called" << '\n';
-	fp_nbr_value = a << 8;
+	std::cout << "Int constructor called" << '\n';
+	fp_nbr_value = a * (1 << nb_fraction_bits);
 } //convert a to the corresponding fp value
 
-Fixed(const float a){
+Fixed::Fixed(const float a){
 	std::cout << "Float constructor called" << '\n';
-	fp_nbr_value = a << 8;
+	fp_nbr_value = a * (1 << nb_fraction_bits);
 } //convert a to the corresponding fp value
 
 Fixed::Fixed(const Fixed& a){
@@ -47,7 +49,7 @@ int	Fixed::getRawBits() const{
 	return (fp_nbr_value);
 }
 
-void	setRawBits(int i){
+void	Fixed::setRawBits(int i){
 	fp_nbr_value = i;
 }
 
@@ -56,4 +58,11 @@ std::ostream& operator<<(std::ostream& out, const Fixed& a){
 	return (out);
 }
 
+float Fixed::toFloat(void) const{
+	return ((float)fp_nbr_value / (1 << nb_fraction_bits));
+}
+
+int Fixed::toInt(void) const{
+	return (fp_nbr_value / (1 << nb_fraction_bits));
+}
 

@@ -6,11 +6,13 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 01:59:47 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/03 23:15:28 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/07 08:50:24 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
+
+const int Fixed::nb_fraction_bits = 8;
 
 Fixed::Fixed(){
 	std::cout << "Default constructor called !" << '\n';

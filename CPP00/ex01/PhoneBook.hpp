@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 14:14:58 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/05 21:38:00 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/07 06:16:39 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 #define BLUE "\033[94m"
 #define RESET "\033[0m"
 #include <iostream>
-#include <cstdio>
-#include <limits>
-#include <iomanip>
-#include <cstdlib>
 #include "Contact.hpp"
 
 class	PhoneBook{

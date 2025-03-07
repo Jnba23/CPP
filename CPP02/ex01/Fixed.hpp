@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 09:56:13 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/03 23:17:53 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/07 09:02:08 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed{
     private:
         int fp_nbr_value;
-        static const int nb_fraction_bits = 8;
+        static const int nb_fraction_bits;
     public:
         Fixed();
         Fixed(const int a); //convert a to the corresponding fp value
@@ -29,8 +29,8 @@ class Fixed{
         Fixed& operator=(const Fixed& a);
         friend std::ostream& operator<<(std::ostream& out,  const Fixed& fp);
         int getRawBits() const;
-        void setRawBits(int a);
+        void setRawBits(int const a);
         float toFloat(void) const; //convert fp_nbr_value to a floating point value
         int   toInt(void) const; //convert fp_nbr_value to an int value
-}
+};
 #endif
