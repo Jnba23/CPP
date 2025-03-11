@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 18:40:49 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/11 08:05:47 by asayad           ###   ########.fr       */
+/*   Created: 2025/02/14 09:45:58 by asayad            #+#    #+#             */
+/*   Updated: 2025/02/14 13:41:44 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A_HPP
-#define HUMAN_A_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
+
 #include <string>
 #include <iostream>
-#include "Weapon.hpp"
 
-class HumanA {
+class Harl {
 	private:
-		std::string name;
-		const Weapon		&weapon;
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
 	public:
-		HumanA(std::string n, Weapon& w);
-		void	attack(void) const;
+		typedef struct level_s{
+			void		(Harl::*f)();
+		} level_t;
+		enum complaint_level {
+			DEBUG = 1,
+			INFO = 2,
+			WARNING = 3,
+			ERROR = 4
+		};
+		void complain(std::string level);
+		void level_init(level_t *levels);
+		int	 get_complaint_level(std::string& level);
 };
+
 
 #endif

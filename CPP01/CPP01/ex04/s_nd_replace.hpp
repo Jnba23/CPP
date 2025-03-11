@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   s_nd_replace.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 18:40:49 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/11 08:05:47 by asayad           ###   ########.fr       */
+/*   Created: 2025/02/13 08:42:38 by asayad            #+#    #+#             */
+/*   Updated: 2025/02/13 16:48:06 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A_HPP
-#define HUMAN_A_HPP
-#include <string>
-#include <iostream>
-#include "Weapon.hpp"
+#ifndef S_ND_REPLACE_HPP
+#define S_ND_REPLACE_HPP
 
-class HumanA {
-	private:
-		std::string name;
-		const Weapon		&weapon;
-	public:
-		HumanA(std::string n, Weapon& w);
-		void	attack(void) const;
-};
+#include <fstream>
+#include <istream>
+#include <iostream>
+#include <iomanip>
+
+std::string search_nd_replace(std::string f_content, std::string s1, std::string s2);
+
 
 #endif
