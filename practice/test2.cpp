@@ -34,7 +34,7 @@
 
 int main(){
     std::cout << std::fixed << '\n';
-    std::cout << std::setprecision(3) << 123.456 << '\n';
+    std::cout << 123.456 << '\n';
     std::cout << std::setprecision(4) << 123.456 << '\n';
     std::cout << std::setprecision(5) << 123.456 << '\n';
     std::cout << std::setprecision(6) << 123.456 << '\n';

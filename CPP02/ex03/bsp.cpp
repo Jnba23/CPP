@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 14:28:09 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/12 11:10:18 by asayad           ###   ########.fr       */
+/*   Created: 2025/03/12 11:22:39 by asayad            #+#    #+#             */
+/*   Updated: 2025/03/14 03:04:39 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Fixed.hpp>
-#include <iostream>
+#include <Point.hpp>
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+bool bsp(Point const a, Point const b, Point const c, Point const point){
+	float ab, bc, ca;
+	
+	ab = cross_product(a, b);
+	bc = cross_product(b, c);
+	ca = cross_product(c, a);
+}
+
+float cross_product(Point const p1, Point const p2){
+	
 }

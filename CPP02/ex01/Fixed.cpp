@@ -6,11 +6,13 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 21:06:56 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/07 08:50:48 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/12 12:28:47 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
+#include <iomanip>
+#include <cmath>
 
 const int Fixed::nb_fraction_bits = 8;
 
@@ -26,7 +28,7 @@ Fixed::Fixed(const int a){
 
 Fixed::Fixed(const float a){
 	std::cout << "Float constructor called" << '\n';
-	fp_nbr_value = a * (1 << nb_fraction_bits);
+	fp_nbr_value = roundf(a * (1 << nb_fraction_bits));
 } //convert a to the corresponding fp value
 
 Fixed::Fixed(const Fixed& a){
@@ -40,7 +42,8 @@ Fixed::~Fixed(){
 
 Fixed& Fixed::operator=(const Fixed& a){
 	std::cout << "Copy assignment operator called" << "\n";
-	fp_nbr_value = a.getRawBits();
+	if (this != &a)
+		fp_nbr_value = a.getRawBits();
 	return (*this);
 }
 
@@ -65,4 +68,3 @@ float Fixed::toFloat(void) const{
 int Fixed::toInt(void) const{
 	return (fp_nbr_value / (1 << nb_fraction_bits));
 }
-
