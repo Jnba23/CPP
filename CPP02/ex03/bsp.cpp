@@ -6,18 +6,15 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:22:39 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/14 10:34:52 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/14 14:21:46 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Point.hpp>
 
 bool bsp(Point const a, Point const b, Point const c, Point const point){
-	float ab, bc, ca, area;
+	float ab, bc, ca;
 	
-	area = cross_product(a, b, c);
-	if (area < powf(2, -23))
-		return (0);
 	ab = cross_product(a, b, point);
 	bc = cross_product(b, c, point);
 	ca = cross_product(c, a, point);
