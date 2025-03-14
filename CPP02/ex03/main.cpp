@@ -6,9 +6,17 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 11:16:50 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/12 11:17:07 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/14 10:33:42 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
 #include <Point.hpp>
+
+int main(){
+    Point p1(3, 2);
+    Point p2(3, 4);
+    Point p3(5, 2);
+    Point p(4, 2.5);
+    std::cout << bsp(p1, p2, p3, p) << '\n';
+}

@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 08:51:27 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/12 12:27:14 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/14 10:29:33 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 const int Fixed::nb_fraction_bits = 8;
 
 Fixed::Fixed(){
-	std::cout << "Default constructor called" << '\n';
+	// std::cout << "Fixed Default constructor called" << '\n';
 	fp_nbr_value = 0;
 }
 
 Fixed::Fixed(const int a){
-	std::cout << "Int constructor called" << '\n';
+	// std::cout << "Fixed Int constructor called" << '\n';
 	fp_nbr_value = a * (1 << nb_fraction_bits);
 }
 
 Fixed::Fixed(const float a){
-	std::cout << "Float constructor called" << '\n';
+	// std::cout << "Fixed Float constructor called" << '\n';
 	fp_nbr_value = roundf(a * (1 << nb_fraction_bits));
 }
 
 Fixed::Fixed(const Fixed &a){
-	std::cout << "Copy constructor called" << '\n';
+	// std::cout << "Fixed Copy constructor called" << '\n';
 	*this = a;
 }
 
 Fixed::~Fixed(){
-	std::cout << "Destructor called" << '\n';
+	// std::cout << "Fixed Destructor called" << '\n';
 }
 
 int Fixed::getRawBits(void) const{
@@ -55,7 +55,7 @@ int	Fixed::toInt(void) const{
 }
 
 Fixed& Fixed::operator=(const Fixed& a){
-	std::cout << "Copy assignment operator called" << "\n";
+	// std::cout << "Fixed Copy assignment operator called" << "\n";
 	if (this != &a)
 		fp_nbr_value = a.getRawBits();
 	return (*this);
