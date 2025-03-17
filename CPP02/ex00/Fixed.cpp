@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 01:59:47 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/12 12:29:17 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/15 12:53:10 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,16 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called !" << '\n';
 }
 
-void	Fixed::setRawBits(int i){
-	this->fp_nbr_value = i;
-}
-
 Fixed& Fixed::operator=(const Fixed& a){
 	std::cout << "Copy assignment operator called" << "\n";
 	if (this != &a)
 		this->fp_nbr_value = a.getRawBits();
 	return (*this);
+}
+
+void	Fixed::setRawBits(int i){
+	std::cout << "SetRawBits member function called" << "\n";
+	this->fp_nbr_value = i;
 }
 
 int	Fixed::getRawBits() const{

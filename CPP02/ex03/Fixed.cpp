@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 08:51:27 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/14 10:29:33 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/15 13:01:33 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	Fixed::toInt(void) const{
 }
 
 Fixed& Fixed::operator=(const Fixed& a){
-	// std::cout << "Fixed Copy assignment operator called" << "\n";
+	// std::cout << "Copy assignment operator called" << "\n";
 	if (this != &a)
 		fp_nbr_value = a.getRawBits();
 	return (*this);
