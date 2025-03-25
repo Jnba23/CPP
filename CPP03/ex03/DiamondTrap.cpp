@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 07:29:24 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/25 00:36:15 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 01:44:44 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::string DiamondTrap::getName() const{
     return (name);
 }
 
-void DiamondTrap::whoAmI(void){
+void DiamondTrap::whoAmI(void) const{
     std::cout << "I am " << getName() << " and my ClapName is " << ClapTrap::getName() << '\n';
 }
 

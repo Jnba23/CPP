@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:51:44 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/24 02:11:13 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 02:08:09 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ ClapTrap::ClapTrap(std::string n){
     HitPoints = 10;
     EnergyPoints = 10;
     Attack_damage = 10;
+}
+
+ClapTrap::ClapTrap(std::string n, unsigned int h_p, unsigned int e_p, unsigned int a_d):
+    name(n), HitPoints(h_p), EnergyPoints(e_p), Attack_damage(a_d){
+    std::cout << "ClapTrap Constructor called" << '\n';
 }
 
 ClapTrap::ClapTrap(const ClapTrap& inst){

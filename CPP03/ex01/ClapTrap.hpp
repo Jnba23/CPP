@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:51:48 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/24 08:25:31 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 02:06:49 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ class ClapTrap{
     public :
         ClapTrap();
 		ClapTrap(std::string n);
+		ClapTrap(std::string n, unsigned int h_p, unsigned int e_p, unsigned int a_d);
 		ClapTrap(const ClapTrap& inst);
 		ClapTrap& operator=(const ClapTrap& a);
-		~ClapTrap();
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         std::string getName() const;
         virtual void attack(const std::string& target);
+		virtual ~ClapTrap();
 };
 #endif

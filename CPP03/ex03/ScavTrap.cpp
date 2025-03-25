@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 07:13:17 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/25 00:17:04 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 01:43:42 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void ScavTrap::attack(const std::string& target){
     }
 }
 
-void ScavTrap::guardGate(){
+void ScavTrap::guardGate() const{
     std::cout << "ScavTrap " << getName() << " is now in Gate keeper mode !" << '\n';
 }
 

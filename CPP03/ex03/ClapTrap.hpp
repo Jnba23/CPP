@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:51:48 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/25 00:05:50 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 01:39:44 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap{
 		ClapTrap(std::string n);
 		ClapTrap(const ClapTrap& inst);
 		ClapTrap& operator=(const ClapTrap& a);
-		~ClapTrap();
+		virtual ~ClapTrap();
         virtual void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

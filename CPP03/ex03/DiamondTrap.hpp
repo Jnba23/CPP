@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 07:14:16 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/24 08:58:31 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 01:44:50 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class DiamondTrap : public FragTrap, public ScavTrap{
         DiamondTrap(const DiamondTrap& dt);
         DiamondTrap& operator=(const DiamondTrap& dt);
         ~DiamondTrap();
-        void whoAmI();
+        void whoAmI() const;
         std::string getName() const;
         void attack(const std::string& target);
 };

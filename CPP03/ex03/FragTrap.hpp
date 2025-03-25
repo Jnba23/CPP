@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 05:11:23 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/25 00:19:59 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 01:43:54 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ class FragTrap : virtual public ClapTrap{
         FragTrap& operator=(const FragTrap& ft);
         void attack(const std::string& target);
         ~FragTrap();
-        void highFivesGuys(void);
+        void highFivesGuys(void) const;
 };
 #endif

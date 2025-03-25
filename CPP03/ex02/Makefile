@@ -4,7 +4,7 @@ CFLAGS = -Wall -Werror -Wextra -I. -std=c++98
 SRCM = main.cpp ClapTrap.cpp FragTrap.cpp
 OBJM = $(SRCM:.cpp=.o)
 HEADER = ClapTrap.hpp FragTrap.hpp
-EXEC = ClapTrap
+EXEC = FragTrap
 
 all: $(EXEC)
 

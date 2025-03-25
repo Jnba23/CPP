@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 05:11:25 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/25 00:24:00 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 01:44:01 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void FragTrap::attack(const std::string& target){
     }
 }
 
-void FragTrap::highFivesGuys(void){
+void FragTrap::highFivesGuys(void) const{
     std::cout << "Give me a high Fiive ... !" << '\n';
 }
 

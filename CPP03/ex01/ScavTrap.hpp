@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 07:12:23 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/24 08:24:37 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/25 01:49:06 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ScavTrap : public ClapTrap{
         ScavTrap(const ScavTrap& st);
         ScavTrap& operator=(const ScavTrap& st);
         ~ScavTrap();
-        void guardGate();
+        void guardGate() const;
         void attack(const std::string& target);
         
 };
