@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 07:12:23 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/24 08:24:37 by asayad           ###   ########.fr       */
+/*   Created: 2025/03/23 07:14:16 by asayad            #+#    #+#             */
+/*   Updated: 2025/03/24 08:58:31 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
 #include <iostream>
 #include <ClapTrap.hpp>
+#include <ScavTrap.hpp>
+#include <FragTrap.hpp>
 
-class ScavTrap : public ClapTrap{
+class DiamondTrap : public FragTrap, public ScavTrap{
+    private:
+        std::string name;
     public:
-        ScavTrap();
-        ScavTrap(std::string n);
-        ScavTrap(const ScavTrap& st);
-        ScavTrap& operator=(const ScavTrap& st);
-        ~ScavTrap();
-        void guardGate();
+        DiamondTrap(std::string n);
+        DiamondTrap(const DiamondTrap& dt);
+        DiamondTrap& operator=(const DiamondTrap& dt);
+        ~DiamondTrap();
+        void whoAmI();
+        std::string getName() const;
         void attack(const std::string& target);
-        
 };
+
+
+/*
+    VPTR*
+        CLAPTRAP | vptr.SCAVTRAP | vptr.FRAGTRAP | DIAMONDTRAO
+*/
 
 #endif

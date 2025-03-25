@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 07:12:23 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/24 08:24:37 by asayad           ###   ########.fr       */
+/*   Created: 2025/03/16 08:35:22 by asayad            #+#    #+#             */
+/*   Updated: 2025/03/23 06:09:58 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include <FragTrap.hpp>
 
-#include <iostream>
-#include <ClapTrap.hpp>
-
-class ScavTrap : public ClapTrap{
-    public:
-        ScavTrap();
-        ScavTrap(std::string n);
-        ScavTrap(const ScavTrap& st);
-        ScavTrap& operator=(const ScavTrap& st);
-        ~ScavTrap();
-        void guardGate();
-        void attack(const std::string& target);
-        
-};
-
-#endif
+int main(){
+    FragTrap a("S1");
+    FragTrap b("S2");
+    FragTrap c(b);
+    for (int i = 0; i < 105; i++)
+        c.attack("S1");
+    c.highFivesGuys();
+}

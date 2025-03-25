@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 07:12:23 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/24 08:24:37 by asayad           ###   ########.fr       */
+/*   Created: 2025/03/16 08:35:22 by asayad            #+#    #+#             */
+/*   Updated: 2025/03/24 08:19:10 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include <DiamondTrap.hpp>
 
-#include <iostream>
-#include <ClapTrap.hpp>
+int main(){
 
-class ScavTrap : public ClapTrap{
-    public:
-        ScavTrap();
-        ScavTrap(std::string n);
-        ScavTrap(const ScavTrap& st);
-        ScavTrap& operator=(const ScavTrap& st);
-        ~ScavTrap();
-        void guardGate();
-        void attack(const std::string& target);
-        
-};
+    // ClapTrap* DIM = new DiamondTrap("C!");
+    // ScavTrap scav("dx");
 
-#endif
+    // scav.attack("tar");
+    // DIM->attack("ka3ka3");
+    // std::cout << DIM->getName() << std::endl;
+    // delete DIM;
+    ClapTrap a("C1");
+    DiamondTrap b("D1");
+    DiamondTrap c(b);
+    c.attack("C1");
+    c.whoAmI();
+}

@@ -6,12 +6,17 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 08:35:22 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/16 08:35:52 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/23 03:03:34 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ScavTrap.hpp>
 
 int main(){
-    
+    ScavTrap a("S1");
+    ScavTrap b("S2");
+    ScavTrap c(b);
+    c.guardGate();
+    for (int i = 0; i < 105; i++)
+        c.attack("S1");
 }

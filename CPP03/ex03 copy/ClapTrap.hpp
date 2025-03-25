@@ -6,7 +6,7 @@
 /*   By: asayad <asayad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:51:48 by asayad            #+#    #+#             */
-/*   Updated: 2025/03/24 01:58:16 by asayad           ###   ########.fr       */
+/*   Updated: 2025/03/23 21:45:56 by asayad           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ class ClapTrap{
         unsigned int        EnergyPoints; // attacking and repairing consumes 1 energy point each
         unsigned int        Attack_damage;
     public:
-        Claptrap();
-		ClapTrap(std::string n);
+		ClapTrap(std::string n, unsigned int h_p, unsigned int e_p, unsigned int a_d);
 		ClapTrap(const ClapTrap& inst);
 		ClapTrap& operator=(const ClapTrap& a);
-		~ClapTrap();
-        void attack(const std::string& target);
+		virtual ~ClapTrap();
+        virtual void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+        virtual std::string getName() const;
 };
 #endif
